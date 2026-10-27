@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation of Mathematics Assignment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="topbar container">
+        <div class="brand">Math in Computing</div>
+        <div class="nav-links">
+          <a href="#overview">Overview</a>
+          <a href="#combinatorics">Combinatorics</a>
+          <a href="#numerical">Numerical Methods</a>
+          <a href="#operations">Operations Research</a>
+          <a href="#boolean">Boolean Algebra</a>
+        </div>
+      </nav>
+
+      <div class="hero-content container">
+        <div class="hero-text">
+          <p class="eyebrow">Foundation of Mathematics</p>
+          <h1>Applied Mathematics in the World of Computing</h1>
+          <p class="subtitle">
+            An interactive assignment that demonstrates how combinatorics, numerical methods,
+            linear programming, and Boolean algebra solve real computing problems.
+          </p>
+          <div class="cta-row">
+            <a class="primary-btn" href="#overview">Explore the project</a>
+            <a class="secondary-btn" href="#combinatorics">Try the tools</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Assignment Details</h3>
+          <ul>
+            <li><strong>Name:</strong> Student Name</li>
+            <li><strong>Enrolment No.:</strong> 123456789</li>
+            <li><strong>Programme:</strong> B.Tech / BCA / etc.</li>
+            <li><strong>Semester:</strong> 3</li>
+            <li><strong>Division:</strong> A</li>
+            <li><strong>Unit:</strong> Foundation of Mathematics</li>
+            <li><strong>Title:</strong> Math in Computing</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="overview" class="container section">
+        <div class="section-heading">
+          <p class="eyebrow">Objective</p>
+          <h2>Why mathematics matters in computing</h2>
+        </div>
+        <div class="grid-2">
+          <div class="info-box">
+            <p>
+              This project connects mathematical thinking to real-world digital systems.
+              Every program, network, and algorithm depends on mathematical structures for
+              correctness, speed, and decision-making.
+            </p>
+            <p>
+              We use four important ideas from the Foundation of Mathematics:
+              <strong>Combinatorics</strong>, <strong>Numerical Methods</strong>,
+              <strong>Operations Research</strong>, and <strong>Boolean Algebra</strong>.
+            </p>
+          </div>
+          <div class="info-box highlight">
+            <h3>Core idea</h3>
+            <p>
+              Mathematics is not only a theory subject in computer science. It is the engine
+              behind secure passwords, optimization of resources, numerical approximation,
+              and digital logic.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="combinatorics" class="container section alt-bg">
+        <div class="section-heading">
+          <p class="eyebrow">Unit 1: Combinatorics</p>
+          <h2>Password and PIN strength calculator</h2>
+        </div>
+
+        <div class="tool-panel">
+          <div class="form-box">
+            <label>PIN length</label>
+            <input id="pinLength" type="number" min="1" max="12" value="4" />
+
+            <label>Digit set options</label>
+            <select id="pinSet">
+              <option value="10">0-9 (10 digits)</option>
+              <option value="12">0-9 + 2 special keys (12 choices)</option>
+              <option value="26">A-Z only (26 choices)</option>
+            </select>
+
+            <label>Case sensitivity for passwords</label>
+            <select id="charSet">
+              <option value="62">Lowercase + uppercase + digits (62)</option>
+              <option value="94">Standard keyboard characters (94)</option>
+              <option value="26">Lowercase letters only (26)</option>
+            </select>
+
+            <label>Password length</label>
+            <input id="passLength" type="number" min="4" max="20" value="8" />
+
+            <button id="calcBtn">Calculate strength</button>
+          </div>
+
+          <div class="results-box">
+            <h3>Results</h3>
+            <div class="result-row">
+              <span>Total PIN combinations</span>
+              <strong id="pinResult">0</strong>
+            </div>
+            <div class="result-row">
+              <span>Password combinations</span>
+              <strong id="passResult">0</strong>
+            </div>
+            <div class="result-row">
+              <span>Strength rating</span>
+              <strong id="strengthResult">-</strong>
+            </div>
+            <p id="comboSummary">
+              Passwords are counted using permutations because the order of characters matters.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="numerical" class="container section">
+        <div class="section-heading">
+          <p class="eyebrow">Unit 2: Numerical Methods</p>
+          <h2>Root-finding comparison: Bisection vs Newton-Raphson</h2>
+        </div>
+
+        <div class="tool-panel">
+          <div class="form-box">
+            <label>Equation</label>
+            <input id="equationInput" type="text" value="x^3 - x - 1" />
+            <label>Initial interval [a, b]</label>
+            <div class="inline-fields">
+              <input id="aVal" type="number" value="1" step="0.1" />
+              <input id="bVal" type="number" value="2" step="0.1" />
+            </div>
+            <label>Initial guess x0</label>
+            <input id="x0Val" type="number" value="1.5" step="0.1" />
+            <button id="solveBtn">Run methods</button>
+          </div>
+
+          <div class="results-box">
+            <h3>Approximate root</h3>
+            <div class="result-row">
+              <span>Bisection root</span>
+              <strong id="bisectionRoot">-</strong>
+            </div>
+            <div class="result-row">
+              <span>Newton root</span>
+              <strong id="newtonRoot">-</strong>
+            </div>
+            <div class="result-row">
+              <span>Preferred method</span>
+              <strong id="methodChoice">-</strong>
+            </div>
+            <div class="iteration-box">
+              <h4>Iterations</h4>
+              <div id="iterationList"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="operations" class="container section alt-bg">
+        <div class="section-heading">
+          <p class="eyebrow">Unit 3: Operations Research and Linear Programming</p>
+          <h2>Server allocation optimizer</h2>
+        </div>
+
+        <div class="tool-panel">
+          <div class="form-box">
+            <label>CPU servers (x)</label>
+            <input id="serverX" type="number" value="10" />
+            <label>Memory servers (y)</label>
+            <input id="serverY" type="number" value="8" />
+            <label>Profit per CPU server</label>
+            <input id="profitX" type="number" value="40" />
+            <label>Profit per memory server</label>
+            <input id="profitY" type="number" value="30" />
+            <label>Resource limit</label>
+            <input id="resourceLimit" type="number" value="60" />
+            <button id="lpBtn">Find optimal allocation</button>
+          </div>
+
+          <div class="results-box">
+            <h3>Optimal solution</h3>
+            <div class="result-row">
+              <span>Best x</span>
+              <strong id="optX">-</strong>
+            </div>
+            <div class="result-row">
+              <span>Best y</span>
+              <strong id="optY">-</strong>
+            </div>
+            <div class="result-row">
+              <span>Maximum profit</span>
+              <strong id="optProfit">-</strong>
+            </div>
+            <p id="lpSummary">
+              This resembles a linear programming model where we maximize profit under limited resources.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="boolean" class="container section">
+        <div class="section-heading">
+          <p class="eyebrow">Unit 4: Lattices and Boolean Algebra</p>
+          <h2>Logic gate and search rule simulator</h2>
+        </div>
+
+        <div class="tool-panel">
+          <div class="form-box">
+            <label>Input A</label>
+            <select id="aInput">
+              <option value="0">0</option>
+              <option value="1">1</option>
+            </select>
+            <label>Input B</label>
+            <select id="bInput">
+              <option value="0">0</option>
+              <option value="1">1</option>
+            </select>
+            <label>Input C</label>
+            <select id="cInput">
+              <option value="0">0</option>
+              <option value="1">1</option>
+            </select>
+            <button id="boolBtn">Evaluate logic</button>
+          </div>
+
+          <div class="results-box">
+            <h3>Boolean evaluation</h3>
+            <div class="result-row">
+              <span>Expression</span>
+              <strong>(A ∧ B) ∨ (¬C)</strong>
+            </div>
+            <div class="result-row">
+              <span>Output</span>
+              <strong id="boolOutput">-</strong>
+            </div>
+            <p id="boolSummary">
+              Boolean algebra helps simplify digital circuits and access-control rules used in software systems.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container section alt-bg">
+        <div class="section-heading">
+          <p class="eyebrow">What I learned</p>
+          <h2>Conclusion</h2>
+        </div>
+        <div class="reflection-box">
+          <p>
+            This project showed that mathematics is deeply connected to computing. Combinatorics helps
+            calculate risk and possible password combinations. Numerical methods improve approximate
+            solutions for equations that do not have direct formulas. Linear programming supports resource
+            optimization and efficient distribution. Boolean algebra forms the logic behind digital gates,
+            conditions, and search filters.
+          </p>
+          <p>
+            In real life, software engineers use these ideas every day to protect systems, design efficient
+            algorithms, optimize server usage, and ensure reliable digital operations.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>Foundation of Mathematics Assignment | Applications in Computing</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
